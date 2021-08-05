@@ -1,0 +1,23 @@
+.SearchBar {
+  display: flex;
+  background-color: rgba($color: #000, $alpha: 0.3);
+  height: 50px;
+  width: 100%;
+  margin: 1rem auto 1rem auto;
+  padding: 0 2rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding-inline-start: 3rem;
+  position: relative;
+  font-size: 1.25rem;
+  color: rgba($color: #000, $alpha: 0.3);
+}
+
+.SearchBar:focus {
+  background: rgba(255, 255, 255, 0.87);
+}
+hr {
+  border: 0.5px solid rgb(180, 179, 179);
+  margin: 1rem 0;
+}

@@ -19,7 +19,6 @@ function NoteManage(props) {
   });
 
   async function onConfirm({ title, description }) {
-    formikForm.setTouched()
     const note = {
       title,
       description,

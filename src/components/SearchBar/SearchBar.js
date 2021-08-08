@@ -7,10 +7,16 @@ import { debounce } from "lodash";
 
 let { getNotes } = require("../../Services/Notes.service");
 function SearchBar(props) {
-  const [iconPath, setIconPath] = useState(searchIconWhite);
 
+  // for switch icon in focus/ blur mode
+  const [iconPath, setIconPath] = useState(searchIconWhite);
   const [inputText, setInputText] = useState("");
 
+  /**
+   *  @description: 
+   *      Handler is used to perform a debounce time (500 ms) between user input 
+   *      to perform better User experience and decrease unnecessary API requests
+   */
   const handler =
     useCallback(
       debounce(async(text) => {

@@ -24,6 +24,11 @@ function NoteManage(props) {
     props.setOpenNoteManage(false);
   }
 
+  /**
+   *      Note: The better handling of create/ update notes is to add/update it in the current note list instead of making another API call to get notes and update the list
+   * 
+   *   TODO: Handle the create/ update without get all notes api request
+   */
   async function createNote(note) {
     const notes = await addNote(note);
     props.setNotes(notes);

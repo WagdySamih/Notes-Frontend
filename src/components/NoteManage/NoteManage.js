@@ -5,17 +5,14 @@ import * as Yup from "yup";
 
 let { editNote, addNote } = require("../../Services/Notes.service");
 function NoteManage(props) {
-
   let mode = props._id ? "update" : "create";
   const validate = Yup.object({
-    title: Yup.string().required("Title is required").max(
-      500,
-      "Maximum letters number is 500"
-    ),
-    description: Yup.string().required("Description is required").max(
-      500,
-      "Maximum letters number is 500"
-    ),
+    title: Yup.string()
+      .required("Title is required")
+      .max(500, "Maximum letters number is 500"),
+    description: Yup.string()
+      .required("Description is required")
+      .max(500, "Maximum letters number is 500"),
   });
 
   async function onConfirm({ title, description }) {
@@ -24,6 +21,7 @@ function NoteManage(props) {
       description,
     };
     mode === "create" ? await createNote(note) : await updateNote(note);
+    props.setOpenNoteManage(false);
   }
 
   async function createNote(note) {
@@ -52,20 +50,19 @@ function NoteManage(props) {
             validationSchema={validate}
           >
             {(formik) => (
-          
               <Form>
                 <InputText
                   label="Title"
                   name="title"
                   type="title"
-                  defaultValue={formik.values.title}
+                  value={formik.values.title}
                   rows="2"
                 />
                 <InputText
                   label="Description"
                   name="description"
                   type="description"
-                  defaultValue={formik.values.description}
+                  value={formik.values.description}
                   rows="8"
                 />
 
@@ -81,7 +78,6 @@ function NoteManage(props) {
                   >
                     Confirm
                   </button>
-
                 </div>
               </Form>
             )}

@@ -1,12 +1,25 @@
 import classes from "./NoteManage.module.scss";
 import { Formik, Form } from "formik";
 import { InputText } from "./InputText/InputText";
+import * as Yup from "yup";
 
 let { editNote, addNote } = require("../../Services/Notes.service");
 function NoteManage(props) {
+
   let mode = props._id ? "update" : "create";
+  const validate = Yup.object({
+    title: Yup.string().required("Title is required").max(
+      500,
+      "Maximum letters number is 500"
+    ),
+    description: Yup.string().required("Description is required").max(
+      500,
+      "Maximum letters number is 500"
+    ),
+  });
+
   async function onConfirm({ title, description }) {
-    props.setOpenNoteManage(false);
+    formikForm.setTouched()
     const note = {
       title,
       description,
@@ -37,8 +50,10 @@ function NoteManage(props) {
               title: props?.title || "",
               description: props?.description || "",
             }}
+            validationSchema={validate}
           >
             {(formik) => (
+          
               <Form>
                 <InputText
                   label="Title"
@@ -60,11 +75,14 @@ function NoteManage(props) {
                     Cancel
                   </button>
                   <button
+                    disabled={!formik.isValid}
+                    className={classes.confirm}
                     className={classes.confirm}
                     onClick={() => onConfirm(formik.values)}
                   >
                     Confirm
                   </button>
+
                 </div>
               </Form>
             )}

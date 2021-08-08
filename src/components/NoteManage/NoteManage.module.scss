@@ -1,0 +1,73 @@
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.modalContent {
+  position: relative;
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 1.5rem;
+  border: 1px solid #888;
+  animation: transit 0.3s ease-in;
+  height: fit-content;
+  overflow: auto;
+  max-height: calc(100% - 3rem);
+}
+
+.updateModal {
+  padding-top: 2rem;
+  width: 500px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #fff;
+  background-color: var(--primary-color);
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-self: flex-end;
+    margin: 1.5rem;
+    button {
+      height: 40px;
+      width: 100px;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      margin-inline-start: 1rem;
+    }
+    .confirm {
+      background: #fff;
+      color: var(--primary-color);
+    }
+    .cancel {
+      color: #fff;
+      background: var(--primary-color);
+    }
+  }
+}
+
+@media screen and(max-width: 600px) {
+  .modalContent {
+    width: 100%;
+  }
+  .updateModal {
+    width: unset;
+    // min-width: calc(100% - 5rem);;
+    Formik,
+    form{
+      width: 100%;
+    }
+  }
+}

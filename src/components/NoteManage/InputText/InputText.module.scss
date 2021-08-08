@@ -1,0 +1,18 @@
+.label{
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.textarea {
+  margin: auto;
+  box-sizing: border-box;
+  width: calc(100% - 3rem);
+  padding: 1.5rem;
+  margin: 1.5rem;
+  outline: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  line-height: 1.8rem;
+
+}

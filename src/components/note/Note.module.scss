@@ -4,21 +4,22 @@
   border: 1px solid #fff;
   max-width: 350px;
   color: #fff;
+  height: min-content;
 
-  .title{
+  .title {
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 1rem;
   }
 }
 
-.noteManage{
+.noteManage {
   display: flex;
   align-items: flex-end;
   align-items: flex-end;
   justify-content: flex-end;
   margin-top: 1rem;
-  button{
+  button {
     cursor: pointer;
     background-color: transparent;
     border: none;

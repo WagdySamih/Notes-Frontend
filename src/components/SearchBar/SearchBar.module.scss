@@ -1,22 +1,30 @@
 .SearchBar {
-  display: flex;
-  background-color: rgba($color: #000, $alpha: 0.3);
-  height: 50px;
-  width: 100%;
-  margin: 1rem auto 1rem auto;
-  padding: 0 2rem;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  padding-inline-start: 3rem;
   position: relative;
-  font-size: 1.25rem;
-  color: rgba($color: #000, $alpha: 0.3);
+  input {
+    background-color: rgba($color: #000, $alpha: 0.3);
+    height: 50px;
+    width: 100%;
+    margin: 1rem auto 1rem auto;
+    padding: 0 2rem;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding-inline-start: 3.5rem;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.87);
+  }
+  img {
+    position: absolute;
+    left: 1rem;
+    top: 1.7rem;
+  }
 }
 
-.SearchBar:focus {
+input:focus {
   background: rgba(255, 255, 255, 0.87);
+  color: var(--primary-color);
 }
+
 hr {
   border: 0.5px solid rgb(180, 179, 179);
   margin: 1rem 0;
